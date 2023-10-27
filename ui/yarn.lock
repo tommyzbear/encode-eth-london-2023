@@ -1910,6 +1910,7 @@ __metadata:
     "@types/node": ^17.0.35
     "@types/react": ^18.0.9
     "@types/react-copy-to-clipboard": ^5.0.4
+    "@types/three": ^0.158.0
     "@typescript-eslint/eslint-plugin": ^5.39.0
     "@uniswap/sdk-core": ^4.0.1
     "@uniswap/v2-sdk": ^3.0.1
@@ -1930,6 +1931,7 @@ __metadata:
     react-dom: ^18.2.0
     react-hot-toast: ^2.4.0
     tailwindcss: ^3.3.3
+    three: ^0.158.0
     typescript: ^5.1.6
     use-debounce: ^8.0.4
     usehooks-ts: ^2.7.2
@@ -2678,10 +2680,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/stats.js@npm:*":
+  version: 0.17.2
+  resolution: "@types/stats.js@npm:0.17.2"
+  checksum: cbe300f1a548051c353f5a17a9bde406f468cb171fad1b6ec3d50b8af539389ecbd4a99765bd67c9f7acd7608ed8c5a275b19a60c1545341c3cac58abf0f487e
+  languageName: node
+  linkType: hard
+
+"@types/three@npm:^0.158.0":
+  version: 0.158.0
+  resolution: "@types/three@npm:0.158.0"
+  dependencies:
+    "@types/stats.js": "*"
+    "@types/webxr": "*"
+    fflate: ~0.6.10
+    meshoptimizer: ~0.18.1
+  checksum: 605f34c13d93060e65ae0b7755b6d202b97d62024b67f2253cf35f90ac7f8b66f8bab81d032c4901a34a43b035b8e3242f30564d54ebd221622344db2fd24007
+  languageName: node
+  linkType: hard
+
 "@types/trusted-types@npm:^2.0.2":
   version: 2.0.2
   resolution: "@types/trusted-types@npm:2.0.2"
   checksum: 3371eef5f1c50e1c3c07a127c1207b262ba65b83dd167a1c460fc1b135a3fb0c97b9f508efebd383f239cc5dd5b7169093686a692a501fde9c3f7208657d9b0d
+  languageName: node
+  linkType: hard
+
+"@types/webxr@npm:*":
+  version: 0.5.7
+  resolution: "@types/webxr@npm:0.5.7"
+  checksum: 1a797043659788659983787ac75c1826b59d3bacfb263800650479f7cc5f721fb86126ac64b265c3dcb2793b09c5104faab053249a05a4b1b991a4b5a62c4d1e
   languageName: node
   linkType: hard
 
@@ -7194,6 +7222,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fflate@npm:~0.6.10":
+  version: 0.6.10
+  resolution: "fflate@npm:0.6.10"
+  checksum: 96384bc4090987fe565c0de8204e3830f538144ec950576fea50aee1b42adbe9fc3ed5e7905dfa7979faaa20979def330dbebce548f3dcafc3e118cc9838526d
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -9558,6 +9593,13 @@ __metadata:
   version: 1.4.1
   resolution: "merge2@npm:1.4.1"
   checksum: 7268db63ed5169466540b6fb947aec313200bcf6d40c5ab722c22e242f651994619bcd85601602972d3c85bd2cc45a358a4c61937e9f11a061919a1da569b0c2
+  languageName: node
+  linkType: hard
+
+"meshoptimizer@npm:~0.18.1":
+  version: 0.18.1
+  resolution: "meshoptimizer@npm:0.18.1"
+  checksum: 101dbed8abd4cf167cdb7a0bc13db90dd0743332c689e43b18cc5254d238f0766750752432401fa63dc7e9e32399ef68daacf48f0d89db1484042c1761c7362d
   languageName: node
   linkType: hard
 
@@ -12014,8 +12056,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "se-2@workspace:."
   dependencies:
+    "@types/three": ^0.158.0
     husky: ^8.0.1
     lint-staged: ^13.0.3
+    three: ^0.158.0
   languageName: unknown
   linkType: soft
 
@@ -13035,6 +13079,13 @@ __metadata:
   dependencies:
     real-require: ^0.1.0
   checksum: 0547795a8f357ba1ac0dba29c71f965182e29e21752951a04a7167515ee37524bfba6c410f31e65a01a8d3e5b93400b812889aa09523e38ce4d744c894ffa6c0
+  languageName: node
+  linkType: hard
+
+"three@npm:^0.158.0":
+  version: 0.158.0
+  resolution: "three@npm:0.158.0"
+  checksum: 30decfb78125732ffc287946208d11b3ba8b6d765d7e806c1e0149f6edc3671e69e2cc680082486858bcd123a1ba24f6dbc8222e88b6edb9e17d9487ae4ed821
   languageName: node
   linkType: hard
 
