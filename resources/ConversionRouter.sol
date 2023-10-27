@@ -88,8 +88,4 @@ contract ConversionRouter is OwnableUpgradeable {
             emit SwapFailed(m_inputToken, m_outputToken, m_amount);
         }
     }
-
-    function setDefaultRoute(uint8 m_defaultRoute) external onlyOwner {
-        s_defaultRoute = m_defaultRoute;
-    }
 }
