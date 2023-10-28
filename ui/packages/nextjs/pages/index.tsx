@@ -10,15 +10,16 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center">
       <MetaHeader />
+      <div className="text-2xl">Welcome back, Saida</div>
       <div className="mt-2">
         <Canvas
-          camera={{ position: [0, 0, 4], near: 0.01, far: 100, rotation: [0, 0, 0], fov: 50 }}
+          camera={{ position: [0, 0, 5], near: 0.01, far: 100, rotation: [0, 0, 0], fov: 50 }}
           className="mx-auto my-4"
           style={{
             width: "100vw",
-            height: "100vh", // Adjust the height as needed
-            marginTop: "-50px", // Reduce the top margin as needed
-            marginBottom: "-200px", // Reduce the bottom margin as needed
+            height: "100vh",
+            marginTop: "-50px",
+            marginBottom: "-200px",
           }}
         >
           <OrbitControls enableZoom={false} autoRotate={true} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} />
@@ -30,18 +31,18 @@ const Home: NextPage = () => {
       <div className="buttons z-10 flex flex-col items-center" style={{ marginTop: "10px" }}>
         <div className="flex flex-row gap-6">
           <Link href="/swap" passHref>
-            <button className="flex max-w-sm w-full bg-gradient-to-r bg-gradient-to-r from-green-300 to-violet-400 hover:from-violet-400 focus:outline-none text-white text-2xl uppercase font-bold shadow-md rounded-full mx-auto p-5">
-              SWAP
+            <button className="btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:text-white py-2 px-4 rounded-full">
+              Swap
+            </button>
+          </Link>{" "}
+          <Link href="/portfolio" passHref>
+            <button className="btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:text-white py-2 px-4 rounded-full mt-6">
+              Portfolio
             </button>
           </Link>{" "}
           <Link href="/nfts" passHref>
-            <button className="flex max-w-sm w-full bg-gradient-to-r from-green-300 to-violet-400 hover:from-violet-400 focus:outline-none text-white text-2xl uppercase font-bold shadow-md rounded-full mx-auto p-5 mt-6">
+            <button className="btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:text-white py-2 px-4 rounded-full">
               NFTs
-            </button>
-          </Link>{" "}
-          <Link href="/new" passHref>
-            <button className="flex max-w-sm w-full bg-gradient-to-r bg-gradient-to-r from-green-300 to-violet-400 hover:from-violet-400 focus:outline-none text-white text-2xl uppercase font-bold shadow-md rounded-full mx-auto p-5">
-              New
             </button>
           </Link>{" "}
         </div>

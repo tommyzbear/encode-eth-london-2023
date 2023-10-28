@@ -4,7 +4,9 @@
 
 :root,
 [data-theme] {
-  background: white;
+  background: linear-gradient(to bottom, #e5dcff, #cfebff);
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
 }
 
 body {
