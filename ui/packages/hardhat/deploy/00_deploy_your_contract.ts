@@ -1,6 +1,10 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
+// import { getContract } from "ethers";
 import { log } from "console";
+
+// Hardcode an address here if you like;
+const initializer = "";
 
 /**
  * Deploys a contract named "YourContract" using the deployer account and
@@ -24,15 +28,33 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
 
   console.log(deployer)
 
-  await deploy("YourContract", {
+  // await deploy("YourContract", {
+  //   from: deployer,
+  //   // Contract constructor arguments
+  //   args: [deployer],
+  //   log: true,
+  //   // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
+  //   // automatically mining the contract deployment transaction. There is no effect on live networks.
+  //   autoMine: true,
+  // });
+
+  console.log('About to deploy PersonalAccountImplementationV1');
+
+  await deploy("PersonalAccountImplementationV1", {
     from: deployer,
-    // Contract constructor arguments
-    args: [deployer],
+    // No constructor arguments but
+    // args: [initializer || deployer],
+    // to initializer
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
     autoMine: true,
   });
+
+  // @ts-ignore
+  const abstractedAccount = await hre.ethers.getContract('PersonalAccountImplementationV1');
+  const initTx = await abstractedAccount.initialize(([initializer || deployer]).toString());
+  
 
   // Get the deployed contract
   // const yourContract = await hre.ethers.getContract("YourContract", deployer);
@@ -42,4 +64,4 @@ export default deployYourContract;
 
 // Tags are useful if you have multiple deploy files and only want to run one of them.
 // e.g. yarn deploy --tags YourContract
-deployYourContract.tags = ["YourContract"];
+deployYourContract.tags = ["PersonalAccountImplementationV1"];
