@@ -1,5 +1,7 @@
 import { contract } from "./contract";
 
+// Import contract instance
+
 export const getContractAssets = async () => {
   try {
     // Assume getAssets is a method in your contract that returns an array of asset symbols

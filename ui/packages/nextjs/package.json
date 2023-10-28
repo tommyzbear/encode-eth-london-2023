@@ -33,6 +33,7 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
+    "recharts": "^2.9.0",
     "three": "^0.158.0",
     "ts-loader": "^9.5.0",
     "use-debounce": "^8.0.4",

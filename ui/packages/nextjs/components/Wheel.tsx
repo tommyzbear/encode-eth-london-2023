@@ -1,53 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { contract } from "../utils/contract";
-import { getContractAssets } from "../utils/fetchData";
-import * as d3 from "d3";
+import React from "react";
+import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 
-interface Props {
-  units: number[];
-}
+type Asset = {
+  name: string;
+  units: number;
+};
 
-const Wheel: React.FC<Props> = ({ units }) => {
-  const [data, setData] = useState<{ name: string; value: number }[]>([]);
+type WheelProps = {
+  assets: Asset[];
+};
 
-  useEffect(() => {
-    async function fetchData() {
-      // Use the imported contract instance to fetch assets
-      const assets = await getContractAssets(contract);
-      const totalUnits = units.reduce((a, b) => a + b, 0);
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"]; // add more colors if you have many assets
 
-      const holdings: { [key: string]: number } = {};
-      for (const asset of assets) {
-        holdings[asset.symbol] = asset.balance / totalUnits;
-      }
-
-      const data = Object.entries(holdings).map(([name, value]) => ({ name, value }));
-      setData(data);
-    }
-
-    fetchData();
-  }, [units]); // Remove contractAddress and contractAbi from dependency array
-
-  const width = 400;
-  const height = 400;
-  const radius = Math.min(width, height) / 2;
-
-  const color = d3.scaleOrdinal(d3.schemeCategory10);
-
-  const pie = d3.pie<{ name: string; value: number }>().value(d => d.value);
-
-  const arc = d3.arc<{ name: string; value: number }>().innerRadius(0).outerRadius(radius);
-
-  const paths = pie(data);
+const Wheel: React.FC<WheelProps> = ({ assets }) => {
+  const totalUnits = assets.reduce((total, asset) => total + asset.units, 0);
+  const formattedData = assets.map(asset => ({
+    name: asset.name,
+    value: ((asset.units / totalUnits) * 100).toFixed(2), // percentage
+  }));
 
   return (
-    <svg width={width} height={height}>
-      <g transform={`translate(${width / 2}, ${height / 2})`}>
-        {paths.map((d, i) => (
-          <path key={i} d={arc(d)!} fill={color(d.data.name)} />
+    <PieChart width={400} height={400}>
+      <Pie data={formattedData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={150} fill="#8884d8" label>
+        {formattedData.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
-      </g>
-    </svg>
+      </Pie>
+      <Tooltip />
+      <Legend />
+    </PieChart>
   );
 };
 
