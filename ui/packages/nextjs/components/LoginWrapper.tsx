@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
+import { useAccount } from "wagmi";
 
 export const LoginWrapper = ({ children }) => {
+  const accountState = useAccount();
   const [privateKey, setPrivateKey] = useState<string | null>("1234");
   const [isAuth, setIsAuth] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    // const privateKey = localStorage.getItem("privateKey");
+    const connectedAddress = localStorage.getItem("connectedAddress");
 
     // if (!privateKey) {
     // fetch("http://localhost:3000/api/hello").then(res => {
@@ -41,7 +43,7 @@ export const LoginWrapper = ({ children }) => {
     //   router.push("/login");
     // }
 
-    if (!privateKey) {
+    if (!accountState.isConnected && !connectedAddress) {
       router.push("/login");
     } else {
       setIsAuth(true);
