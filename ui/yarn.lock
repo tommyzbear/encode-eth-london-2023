@@ -2260,7 +2260,7 @@ __metadata:
     eslint-config-prettier: ^8.5.0
     eslint-plugin-prettier: ^4.2.1
     ethers: ^5.7.1
-    hardhat: ^2.17.3
+    hardhat: ^2.18.3
     hardhat-deploy: ^0.11.26
     hardhat-gas-reporter: ^1.0.9
     prettier: ^2.8.4
@@ -8582,9 +8582,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hardhat@npm:^2.17.3":
-  version: 2.17.3
-  resolution: "hardhat@npm:2.17.3"
+"hardhat@npm:^2.18.3":
+  version: 2.18.3
+  resolution: "hardhat@npm:2.18.3"
   dependencies:
     "@ethersproject/abi": ^5.1.2
     "@metamask/eth-sig-util": ^4.0.0
@@ -8644,7 +8644,7 @@ __metadata:
       optional: true
   bin:
     hardhat: internal/cli/bootstrap.js
-  checksum: 0540ef225b3992749c6b828540a9b9a20b4aaa0f2b4f25556d0769b9f32687593ef0fa9e753496647d772e5d4b07300694d588b13cfb5f7d5fb33ed8238ea9fe
+  checksum: 7dc2bacee287238b026dec07f9f80f3f2f7d33c7572117635297609c960fa84feff36905fc81c95ddc6d1b51ea9345d03243a1bba9de76b1be97419df84cc1bf
   languageName: node
   linkType: hard
 
