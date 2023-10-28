@@ -2056,7 +2056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-three/fiber@npm:^8.15.8":
+"@react-three/fiber@npm:^8.15.8, @react-three/fiber@npm:latest":
   version: 8.15.8
   resolution: "@react-three/fiber@npm:8.15.8"
   dependencies:
@@ -12194,6 +12194,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-three-fiber@npm:^6.0.13":
+  version: 6.0.13
+  resolution: "react-three-fiber@npm:6.0.13"
+  dependencies:
+    "@react-three/fiber": latest
+  peerDependencies:
+    react: ">=17.0"
+    react-dom: ">=17.0"
+    three: ">=0.126"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+  checksum: dacd6af91028ac05b5b39a9de64f119eeecaf2d0a8cfd00e7a0ff8e3b58e494e2fc9046c0ebda9a63d18a5e0f111ed13e4ae9db02703c26be50781e59fcbf865
+  languageName: node
+  linkType: hard
+
 "react-use-measure@npm:^2.1.1":
   version: 2.1.1
   resolution: "react-use-measure@npm:2.1.1"
@@ -12836,6 +12852,7 @@ __metadata:
   dependencies:
     husky: ^8.0.1
     lint-staged: ^13.0.3
+    react-three-fiber: ^6.0.13
   languageName: unknown
   linkType: soft
 
