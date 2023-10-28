@@ -10,7 +10,7 @@ module.exports = {
         scaffoldEth: {
           primary: "#8075FF",
           "primary-content": "#212638",
-          secondary: "#DAE8FF",
+          secondary: "#FF9E72",
           "secondary-content": "#212638",
           accent: "#93BBFB",
           "accent-content": "#212638",
@@ -80,6 +80,12 @@ module.exports = {
       },
       animation: {
         "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
+      fontSize: {
+        sm: "0.8rem",
       },
     },
   },
