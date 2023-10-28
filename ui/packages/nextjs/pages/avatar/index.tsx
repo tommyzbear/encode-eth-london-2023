@@ -9,7 +9,7 @@ const Avatar: NextPage = () => {
       camera={{ position: [0, 0, 8], near: 0.01, far: 100, rotation: [0, 0, 0] }} // Adjust rotation to face the front
       style={{
         position: "absolute",
-        top: 0,
+        top: 130,
         left: 0,
         width: "100%",
         height: "100%",
