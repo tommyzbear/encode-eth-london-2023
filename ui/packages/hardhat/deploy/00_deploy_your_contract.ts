@@ -1,5 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
+import { log } from "console";
 
 /**
  * Deploys a contract named "YourContract" using the deployer account and
@@ -20,6 +21,8 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   */
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
+
+  console.log(deployer)
 
   await deploy("YourContract", {
     from: deployer,

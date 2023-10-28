@@ -7,6 +7,7 @@
  *  */
 
 import * as fs from "fs";
+import * as path from "path";
 import prettier from "prettier";
 import { DeployFunction } from "hardhat-deploy/types";
 
@@ -25,6 +26,7 @@ function getContractNames(path: string) {
 }
 
 const DEPLOYMENTS_DIR = "./deployments";
+console.log(`looking for deployments folder in: ${path.resolve(DEPLOYMENTS_DIR)}`)
 
 function getContractDataFromDeployments() {
   if (!fs.existsSync(DEPLOYMENTS_DIR)) {
