@@ -4,17 +4,11 @@ const contracts = {
       chainId: "31337",
       name: "localhost",
       contracts: {
-        YourContract: {
+        PersonalAccountImplementationV1: {
           address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
           abi: [
             {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "_owner",
-                  type: "address",
-                },
-              ],
+              inputs: [],
               stateMutability: "nonpayable",
               type: "constructor",
             },
@@ -22,93 +16,34 @@ const contracts = {
               anonymous: false,
               inputs: [
                 {
-                  indexed: true,
+                  indexed: false,
                   internalType: "address",
-                  name: "greetingSetter",
+                  name: "initializer",
                   type: "address",
                 },
-                {
-                  indexed: false,
-                  internalType: "string",
-                  name: "newGreeting",
-                  type: "string",
-                },
-                {
-                  indexed: false,
-                  internalType: "bool",
-                  name: "premium",
-                  type: "bool",
-                },
-                {
-                  indexed: false,
-                  internalType: "uint256",
-                  name: "value",
-                  type: "uint256",
-                },
               ],
-              name: "GreetingChange",
+              name: "Initialized",
               type: "event",
             },
             {
-              inputs: [],
-              name: "greeting",
-              outputs: [
+              inputs: [
                 {
-                  internalType: "string",
-                  name: "",
-                  type: "string",
+                  internalType: "bytes32",
+                  name: "interfaceHash",
+                  type: "bytes32",
                 },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "owner",
-              outputs: [
                 {
                   internalType: "address",
-                  name: "",
+                  name: "addr",
                   type: "address",
                 },
               ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "premium",
+              name: "canImplementInterfaceForAddress",
               outputs: [
                 {
-                  internalType: "bool",
+                  internalType: "bytes32",
                   name: "",
-                  type: "bool",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "string",
-                  name: "_newGreeting",
-                  type: "string",
-                },
-              ],
-              name: "setGreeting",
-              outputs: [],
-              stateMutability: "payable",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "totalCounter",
-              outputs: [
-                {
-                  internalType: "uint256",
-                  name: "",
-                  type: "uint256",
+                  type: "bytes32",
                 },
               ],
               stateMutability: "view",
@@ -118,31 +53,199 @@ const contracts = {
               inputs: [
                 {
                   internalType: "address",
-                  name: "",
+                  name: "registry_",
                   type: "address",
                 },
               ],
-              name: "userGreetingCounter",
-              outputs: [
-                {
-                  internalType: "uint256",
-                  name: "",
-                  type: "uint256",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "withdraw",
+              name: "initialize",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
             },
             {
-              stateMutability: "payable",
-              type: "receive",
+              inputs: [],
+              name: "isInitialized",
+              outputs: [
+                {
+                  internalType: "bool",
+                  name: "",
+                  type: "bool",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "bytes32",
+                  name: "messageHash",
+                  type: "bytes32",
+                },
+                {
+                  internalType: "bytes",
+                  name: "signature",
+                  type: "bytes",
+                },
+              ],
+              name: "isValidSignature",
+              outputs: [
+                {
+                  internalType: "bytes4",
+                  name: "",
+                  type: "bytes4",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "bytes",
+                  name: "message",
+                  type: "bytes",
+                },
+                {
+                  internalType: "bytes",
+                  name: "signature",
+                  type: "bytes",
+                },
+              ],
+              name: "isValidSignature",
+              outputs: [
+                {
+                  internalType: "bytes4",
+                  name: "",
+                  type: "bytes4",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+                {
+                  internalType: "bytes",
+                  name: "",
+                  type: "bytes",
+                },
+              ],
+              name: "onERC1155Received",
+              outputs: [
+                {
+                  internalType: "bytes4",
+                  name: "",
+                  type: "bytes4",
+                },
+              ],
+              stateMutability: "pure",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+                {
+                  internalType: "bytes",
+                  name: "",
+                  type: "bytes",
+                },
+              ],
+              name: "onERC721Received",
+              outputs: [
+                {
+                  internalType: "bytes4",
+                  name: "",
+                  type: "bytes4",
+                },
+              ],
+              stateMutability: "pure",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "registry",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+                {
+                  internalType: "bytes",
+                  name: "",
+                  type: "bytes",
+                },
+                {
+                  internalType: "bytes",
+                  name: "",
+                  type: "bytes",
+                },
+              ],
+              name: "tokensReceived",
+              outputs: [],
+              stateMutability: "pure",
+              type: "function",
             },
           ],
         },
