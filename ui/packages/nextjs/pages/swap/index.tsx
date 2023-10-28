@@ -16,7 +16,7 @@ const Swap: NextPage = () => {
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <button className="btn btn-secondary btn-md rounded-full w-full">Swap</button>
+              <button className="btn btn-accent btn-md rounded-full w-full">Swap</button>
             </div>
           </div>
         </div>
