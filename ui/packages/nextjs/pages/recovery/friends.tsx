@@ -7,8 +7,8 @@ import { RainbowKitLoginConnectButton } from "~~/components/assets";
 import { PaginationButton } from "~~/components/blockexplorer/PaginationButton";
 import { SearchBar } from "~~/components/blockexplorer/SearchBar";
 import { TransactionsTable } from "~~/components/blockexplorer/TransactionsTable";
-import FriendInfo from "~~/components/user/FriendInfo";
-import RecoveryInfo from "~~/components/user/RecoveryInfo";
+import FriendInfo from "~~/components/recovery/FriendInfo";
+import PrivateKeyRecoveryInfo from "~~/components/recovery/PrivateKeyRecoveryInfo";
 import { useFetchBlocks } from "~~/hooks/scaffold-eth";
 import { getTargetNetwork, notification } from "~~/utils/scaffold-eth";
 
