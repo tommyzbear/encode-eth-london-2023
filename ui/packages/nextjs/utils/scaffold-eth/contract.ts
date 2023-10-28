@@ -20,6 +20,8 @@ import { UseContractEventConfig, UseContractReadConfig, UseContractWriteConfig }
 import contractsData from "~~/generated/deployedContracts";
 import scaffoldConfig from "~~/scaffold.config";
 
+console.log('contractsData', contractsData);
+
 /**
  * @description Combines members of an intersection into a readable type.
  * @example
