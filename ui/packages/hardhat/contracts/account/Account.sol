@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.12;
 
-import "./Controlled.sol";
+import "../Controlled.sol";
 import "./AccountBase.sol";
 
 
