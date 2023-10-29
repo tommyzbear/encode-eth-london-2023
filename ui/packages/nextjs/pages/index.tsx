@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center">
       <MetaHeader />
-      <div className="text-xl pt-10">Welcome back, Saida</div>
+      <div className="text-xl pt-10 font-light">Welcome back, Saida</div>
       <div>
         <Canvas
           camera={{ position: [0, 0, 5], near: 0.01, far: 100, rotation: [0, 0, 0], fov: 50 }}
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
             marginBottom: "-210px",
           }}
         >
-          <OrbitControls enableZoom={false} autoRotate={true} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} />
+          <OrbitControls enableZoom={true} autoRotate={true} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} />
           <ambientLight intensity={1} />
           <directionalLight position={[0, 1, 1]} />
           <Model scale={[1, 1, 1]} />
