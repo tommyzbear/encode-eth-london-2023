@@ -5,7 +5,7 @@
 :root,
 [data-theme] {
   background: linear-gradient(to right, #e5ddfa, #d0e7ff);
-  overflow: hidden;
+
 }
 
 body {
