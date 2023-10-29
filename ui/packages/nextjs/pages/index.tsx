@@ -46,6 +46,11 @@ const Home: NextPage = () => {
               NFTs
             </button>
           </Link>{" "}
+          <Link href="/friendSelector" passHref>
+            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">
+              Friends
+            </button>
+          </Link>{" "}
         </div>
         <div className="flex flex-row justify-center gap-6">
           <div className="button-center"></div>

@@ -80,17 +80,6 @@ export const Header = (props: HeaderProps) => {
   return (
   <div className="sticky lg:static top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-0 sm:px-2">
 
-      <details className="dropdown">
-        <summary className="m-2 btn text-xl">☰</summary>
-        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <a>Item 2</a>
-          </li>
-        </ul>
-      </details>
 
 
       <div className="navbar-start w-auto lg:w-1/2">
