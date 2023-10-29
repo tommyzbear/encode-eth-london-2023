@@ -80,7 +80,7 @@ export const Header = (props: HeaderProps) => {
   return (
     <div className="sticky lg:static top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-0 sm:px-2">
       <details className="dropdown">
-        <summary className="m-1 btn">≡</summary>
+        <summary className="m-2 btn text-xl">☰</summary> {/* Increase font size */}
         <ul className="p-2 menu dropdown-content z-[1]">
           <li>
             <a>Item 1</a>

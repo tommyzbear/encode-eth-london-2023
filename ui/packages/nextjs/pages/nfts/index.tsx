@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import type { NextPage } from "next";
-// TODO: update to designated chain
+import Image from "next/image";
 import { hardhat } from "viem/chains";
 import { PaginationButton } from "~~/components/blockexplorer/PaginationButton";
 import { SearchBar } from "~~/components/blockexplorer/SearchBar";
@@ -8,28 +8,57 @@ import { TransactionsTable } from "~~/components/blockexplorer/TransactionsTable
 import { useFetchBlocks } from "~~/hooks/scaffold-eth";
 import { getTargetNetwork, notification } from "~~/utils/scaffold-eth";
 
-
 const Nfts: NextPage = () => {
   const { blocks, transactionReceipts, currentPage, totalBlocks, setCurrentPage, error } = useFetchBlocks();
 
-return (
-<>
-  <div className="flex mx-auto my-10">Hello</div>
-    <div className="card w-96 bg-base-100 shadow-xl">
-        <figure>
-          <img src="packages/nextjs/public/nft.png" alt="NFT" />
-        </figure>
-      <div className="card-body">
-        <h2 className="card-title">#1234567</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">See details</button>
+  // Sample card data
+  const cardData = [
+    {
+      id: 1,
+      title: "#1234567",
+      text: "If a dog chews shoes whose shoes does he choose?",
+    },
+    // Add more cards here with unique data
+    {
+      id: 2,
+      title: "#1234567",
+      text: "If a dog chews shoes whose shoes does he choose?",
+    },
+
+    {
+      id: 3,
+      title: "#1234567",
+      text: "If a dog chews shoes whose shoes does he choose?",
+    },
+
+    {
+      id: 4,
+      title: "#1234567",
+      text: "If a dog chews shoes whose shoes does he choose?",
+    },
+  ];
+
+  return (
+    <div>
+      <div className="flex text-center my-10">Hello, those are your NFTs</div>
+      <div className="grid grid-cols-3 gap-3 my-10">
+        {cardData.map((card) => (
+          <div key={card.id} className="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <Image src="/nft.png" alt="NFT" width={400} height={300} />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{card.title}</h2>
+              <p>{card.text}</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-outline btn-info">See details</button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-</>
   );
-
 };
 
 export default Nfts;
