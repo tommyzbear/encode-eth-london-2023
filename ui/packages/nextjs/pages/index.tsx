@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center">
       <MetaHeader />
-      <div className="text-xl pt-6">Welcome back, Saida</div>
+      <div className="text-xl pt-10">Welcome back, Saida</div>
       <div>
         <Canvas
           camera={{ position: [0, 0, 5], near: 0.01, far: 100, rotation: [0, 0, 0], fov: 50 }}
@@ -29,20 +29,19 @@ const Home: NextPage = () => {
         </Canvas>
       </div>
       <div className="buttons z-10 flex flex-col items-center" style={{ marginTop: "10px" }}>
-        <div className="flex flex-row gap-6">
+        <div className="flex flex-row gap-1 mr-2 ml-2">
           <Link href="/swap" passHref>
             <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">
               Swap
             </button>
           </Link>{" "}
           <Link href="/portfolio" passHref>
-            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">
-
+            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 text-10 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100 mt-6">
               Portfolio
             </button>
           </Link>{" "}
           <Link href="/nfts" passHref>
-            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">
+            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100 mt-6">
               NFTs
             </button>
           </Link>{" "}
@@ -51,9 +50,6 @@ const Home: NextPage = () => {
               Friends
             </button>
           </Link>{" "}
-        </div>
-        <div className="flex flex-row justify-center gap-6">
-          <div className="button-center"></div>
         </div>
       </div>
 

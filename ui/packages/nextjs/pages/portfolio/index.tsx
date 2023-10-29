@@ -57,6 +57,9 @@ const Portfolio: React.FC = () => {
 
   return (
     <div>
+      <div>
+        <h5 className="text-xl text-center">My Portfolio</h5>
+      </div>
       <Wheel assets={assetData || []} />
       {assetData?.map((asset, index) => (
         <div key={index} className="flex text-start">

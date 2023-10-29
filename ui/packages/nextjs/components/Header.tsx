@@ -49,8 +49,8 @@ export const HeaderMenuLinks = () => {
               href={href}
               passHref
               className={`${
-                isActive ? "" : ""
-              } focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col`}
+                isActive ? "text-white bg-secondary hover:bg-primary" : "text-white bg-secondary hover:bg-primary"
+              } focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm`}
             >
               {icon}
               <span>{label}</span>
@@ -78,10 +78,7 @@ export const Header = (props: HeaderProps) => {
   );
 
   return (
-  <div className="sticky lg:static top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-0 sm:px-2">
-
-
-
+    <div className="sticky lg:static top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-0 sm:px-2">
       <div className="navbar-start w-auto lg:w-1/2">
         {props.isAuth ? (
           <div className="lg:hidden dropdown" ref={burgerMenuRef}>
@@ -97,7 +94,7 @@ export const Header = (props: HeaderProps) => {
             {isDrawerOpen && (
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-compact dropdown-content mt-3 p-2 rounded-box w-52"
                 onClick={() => {
                   setIsDrawerOpen(false);
                 }}

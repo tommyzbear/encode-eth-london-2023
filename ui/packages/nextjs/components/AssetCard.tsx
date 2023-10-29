@@ -9,14 +9,12 @@ interface AssetCardProps {
 
 const AssetCard: React.FC<AssetCardProps> = ({ name, units, price, value }) => {
   return (
-    <div className="w-full mb-3 mx-10 bg-base-200 border border-white shadow-lg rounded-2xl p-4">
+    <div className="w-full mb-3 mx-10 bg-base-100 border border-white shadow-lg rounded-2xl p-4">
       <div className="flex">
-        {/* First div: Image */}
         <div className="w-1/3">
-          <img src="your-image-url.jpg" alt="Image" className="w-full h-auto" />
+          <img src="coin.gif" alt="Image" className="w-16 h-auto mx-auto" />
         </div>
 
-        {/* Second div: Two stacked text sections */}
         <div className="w-2/3 p-4">
           <div className="text-section">
             <h3 className="font-bold">{name}</h3>
@@ -30,7 +28,6 @@ const AssetCard: React.FC<AssetCardProps> = ({ name, units, price, value }) => {
       </div>
     </div>
   );
-
 };
 
 export default AssetCard;
