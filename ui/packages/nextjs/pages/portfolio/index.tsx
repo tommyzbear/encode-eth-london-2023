@@ -58,10 +58,12 @@ const Portfolio: React.FC = () => {
   return (
     <div>
       <Wheel assets={assetData || []} />
-        {assetData?.map((asset, index) => (
-          <div className="flex text-start"><AssetCard key={index} {...asset} /></div>
-        ))}
-        {/* <Chart data={assetData} /> */}
+      {assetData?.map((asset, index) => (
+        <div key={index} className="flex text-start">
+          <AssetCard {...asset} />
+        </div>
+      ))}
+      {/* <Chart data={assetData} /> */}
     </div>
   );
 };
