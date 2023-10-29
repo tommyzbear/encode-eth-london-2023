@@ -16,12 +16,24 @@ const Wheel: React.FC<WheelProps> = ({ assets }) => {
   const totalUnits = assets.reduce((total, asset) => total + asset.units, 0);
   const formattedData = assets.map(asset => ({
     name: asset.name,
-    value: ((asset.units / totalUnits) * 100).toFixed(2), // percentage
+    value: Number(((asset.units / totalUnits) * 100).toFixed(2)), // percentage
   }));
+
+  console.log(formattedData);
 
   return (
     <PieChart width={400} height={400}>
-      <Pie data={formattedData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={15} fill="#8884d8" label>
+      <Pie
+        data={formattedData}
+        dataKey="value"
+        nameKey="name"
+        cx="50%"
+        cy="50%"
+        innerRadius={80}
+        outerRadius={100}
+        fill="#8884d8"
+        label
+      >
         {formattedData.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
