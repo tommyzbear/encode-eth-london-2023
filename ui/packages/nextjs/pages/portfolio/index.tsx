@@ -12,7 +12,7 @@ type Asset = {
 
 const Portfolio: React.FC = () => {
   const { data: yourContract } = useScaffoldContract({ contractName: "YourContract" });
-  const [assetData, setAssetData] = useState<Asset[] | null>([
+  const [assetData, setAssetData] = useState<Asset[]>([
     {
       name: "ETH",
       units: 1,
@@ -58,9 +58,9 @@ const Portfolio: React.FC = () => {
   return (
     <div>
       <div>
-        <h5 className="text-xl text-center">My Portfolio</h5>
+        <h5 className="text-xl text-center pt-8 font-light">My Portfolio</h5>
       </div>
-      <Wheel assets={assetData || []} />
+      <Wheel assets={assetData} />
       {assetData?.map((asset, index) => (
         <div key={index} className="flex text-start">
           <AssetCard {...asset} />
