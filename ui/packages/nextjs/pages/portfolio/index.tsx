@@ -60,7 +60,9 @@ const Portfolio: React.FC = () => {
       <div>
         <h5 className="text-xl text-center pt-8 font-light">My Portfolio</h5>
       </div>
-      <Wheel assets={assetData} />
+      <div className="flex items-center justify-center">
+        <Wheel assets={assetData} />
+      </div>
       {assetData?.map((asset, index) => (
         <div key={index} className="flex text-start">
           <AssetCard {...asset} />
