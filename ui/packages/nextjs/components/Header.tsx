@@ -49,8 +49,8 @@ export const HeaderMenuLinks = () => {
               href={href}
               passHref
               className={`${
-                isActive ? "text-white bg-secondary hover:bg-primary" : "text-white bg-secondary hover:bg-primary"
-              } focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm`}
+                isActive ? "text-white bg-secondary hover:bg-primary" : "text-white"
+              } focus:!bg-secondary active:!text-neutral py-1.5 px-2 text-xs mx-2 w-12`}
             >
               {icon}
               <span>{label}</span>
@@ -84,7 +84,7 @@ export const Header = (props: HeaderProps) => {
           <div className="lg:hidden dropdown" ref={burgerMenuRef}>
             <label
               tabIndex={0}
-              className={`ml-1 btn btn-ghost ${isDrawerOpen ? "hover:bg-secondary" : "hover:bg-transparent"}`}
+              className={`ml-1 btn btn-ghost ${isDrawerOpen ? "" : ""}`}
               onClick={() => {
                 setIsDrawerOpen(prevIsOpenState => !prevIsOpenState);
               }}
@@ -94,7 +94,7 @@ export const Header = (props: HeaderProps) => {
             {isDrawerOpen && (
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 rounded-box w-52"
+                className="menu menu-compact dropdown-content rounded-box w-52"
                 onClick={() => {
                   setIsDrawerOpen(false);
                 }}
