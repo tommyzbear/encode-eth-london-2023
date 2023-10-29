@@ -11,6 +11,8 @@
   "scripts": {
     "account": "yarn workspace @se-2/hardhat account",
     "chain": "yarn workspace @se-2/hardhat chain",
+    "chain-but-deploy": "yarn workspace @se-2/hardhat chain-but-deploy",
+    "chain-local": "yarn workspace @se-2/hardhat chain-local",
     "fork": "yarn workspace @se-2/hardhat fork",
     "deploy": "yarn workspace @se-2/hardhat deploy",
     "verify": "yarn workspace @se-2/hardhat verify",

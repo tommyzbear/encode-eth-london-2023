@@ -7,6 +7,7 @@
  *  */
 
 import * as fs from "fs";
+import * as path from "path";
 import prettier from "prettier";
 import { DeployFunction } from "hardhat-deploy/types";
 
@@ -25,11 +26,13 @@ function getContractNames(path: string) {
 }
 
 const DEPLOYMENTS_DIR = "./deployments";
+console.log(`looking for deployments folder in: ${path.resolve(DEPLOYMENTS_DIR)}`)
 
 function getContractDataFromDeployments() {
   if (!fs.existsSync(DEPLOYMENTS_DIR)) {
     throw Error("At least one other deployment script should exist to generate an actual contract.");
   }
+  console.log (`found deployments directory{}. Chains it contains are: ${getDirectories(DEPLOYMENTS_DIR)}`);
   const output = {} as Record<string, any>;
   for (const chainName of getDirectories(DEPLOYMENTS_DIR)) {
     const chainId = fs.readFileSync(`${DEPLOYMENTS_DIR}/${chainName}/.chainId`).toString();
@@ -62,6 +65,8 @@ const generateTsAbis: DeployFunction = async function () {
   const fileContent = Object.entries(allContractsData).reduce((content, [chainId, chainConfig]) => {
     return `${content}${parseInt(chainId).toFixed(0)}:${JSON.stringify(chainConfig, null, 2)},`;
   }, "");
+
+  console.log('fileContent:', fileContent);
 
   if (!fs.existsSync(TARGET_DIR)) {
     fs.mkdirSync(TARGET_DIR);
