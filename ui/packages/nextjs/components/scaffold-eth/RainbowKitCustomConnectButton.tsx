@@ -34,8 +34,8 @@ export const RainbowKitCustomConnectButton = () => {
   useEffect(() => {
     if (!accountState.isConnected && localStorage.getItem("connectedAddress")) {
       console.log("disconnect");
-      localStorage.clear();
-      router.push("/login");
+      // localStorage.clear();
+      // router.push("/login");
     }
   }, [accountState]);
 
@@ -46,7 +46,7 @@ export const RainbowKitCustomConnectButton = () => {
         if (connected) {
           localStorage.setItem("connectedAddress", account.address);
           if (pathname === "/login") {
-            router.push("/");
+            // router.push("/");
           }
         }
         const blockExplorerAddressLink = account
