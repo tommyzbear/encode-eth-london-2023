@@ -10,16 +10,16 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center">
       <MetaHeader />
-      <div className="text-2xl">Welcome back, Saida</div>
-      <div className="mt-2">
+      <div className="text-xl pt-6">Welcome back, Saida</div>
+      <div>
         <Canvas
           camera={{ position: [0, 0, 5], near: 0.01, far: 100, rotation: [0, 0, 0], fov: 50 }}
-          className="mx-auto my-4"
+          className="mx-auto my-2"
           style={{
             width: "100vw",
             height: "100vh",
-            marginTop: "-50px",
-            marginBottom: "-200px",
+            marginTop: "-70px",
+            marginBottom: "-210px",
           }}
         >
           <OrbitControls enableZoom={false} autoRotate={true} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} />
@@ -37,6 +37,7 @@ const Home: NextPage = () => {
           </Link>{" "}
           <Link href="/portfolio" passHref>
             <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">
+
               Portfolio
             </button>
           </Link>{" "}
