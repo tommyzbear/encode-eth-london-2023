@@ -4,7 +4,8 @@
 
 :root,
 [data-theme] {
-  background: hsl(var(--b2));
+  background: linear-gradient(to right, #e5ddfa, #d0e7ff);
+
 }
 
 body {

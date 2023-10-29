@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { QRCodeSVG } from "qrcode.react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { useDisconnect, useSwitchNetwork } from "wagmi";
+import { useAccount, useDisconnect, useSwitchNetwork } from "wagmi";
 import {
   ArrowLeftOnRectangleIcon,
   ArrowTopRightOnSquareIcon,
@@ -26,11 +27,28 @@ export const RainbowKitCustomConnectButton = () => {
   const { disconnect } = useDisconnect();
   const { switchNetwork } = useSwitchNetwork();
   const [addressCopied, setAddressCopied] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const accountState = useAccount();
+
+  useEffect(() => {
+    if (!accountState.isConnected && localStorage.getItem("connectedAddress")) {
+      console.log("disconnect");
+      // localStorage.clear();
+      // router.push("/login");
+    }
+  }, [accountState]);
 
   return (
     <ConnectButton.Custom>
       {({ account, chain, openConnectModal, mounted }) => {
         const connected = mounted && account && chain;
+        if (connected) {
+          localStorage.setItem("connectedAddress", account.address);
+          if (pathname === "/login") {
+            // router.push("/");
+          }
+        }
         const blockExplorerAddressLink = account
           ? getBlockExplorerAddressLink(getTargetNetwork(), account.address)
           : undefined;
@@ -40,7 +58,11 @@ export const RainbowKitCustomConnectButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button className="btn btn-primary btn-sm" onClick={openConnectModal} type="button">
+                  <button
+                    className="btn btn-sm bg-primary transition-all duration-500 ease-in-out fade-in hover:bg-primary hover:opacity-100 text-white font-light hover:bg-secondary"
+                    onClick={openConnectModal}
+                    type="button"
+                  >
                     Connect Wallet
                   </button>
                 );
@@ -73,7 +95,9 @@ export const RainbowKitCustomConnectButton = () => {
                         <button
                           className="menu-item text-error btn-sm !rounded-xl flex gap-3 py-3"
                           type="button"
-                          onClick={() => disconnect()}
+                          onClick={() => {
+                            disconnect();
+                          }}
                         >
                           <ArrowLeftOnRectangleIcon className="h-6 w-4 ml-2 sm:ml-0" /> <span>Disconnect</span>
                         </button>

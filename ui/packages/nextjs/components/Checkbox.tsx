@@ -15,7 +15,10 @@ interface CheckboxProps {
 const Checkbox = ({ onSelection }: CheckboxProps) => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [options, setOptions] = useState<Option[]>([]);
+<<<<<<< HEAD
   const [showPopup, setShowPopup] = useState(false);
+=======
+>>>>>>> master
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
@@ -26,12 +29,15 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
     }
   };
 
+<<<<<<< HEAD
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setShowPopup(true);
     setTimeout(() => setShowPopup(false), 5000); // Hide popup after 5 seconds
   };
 
+=======
+>>>>>>> master
   useEffect(() => {
     const getOptions = async () => {
       // try {
@@ -58,7 +64,11 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
 
       const options = [
         {
+<<<<<<< HEAD
           label: "Arielo",
+=======
+          label: "Ariel",
+>>>>>>> master
           value: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
         },
         {
@@ -120,15 +130,24 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
   // };
 
   return (
+<<<<<<< HEAD
     <form className="flex flex-col items-center" onSubmit={handleSubmit}>
       {options.map(({ label, value, status }) => (
         <div key={value} className="flex items-center mb-2 w-full justify-center">
           <label className="flex items-center space-x-2">
+=======
+    <form onSubmit={() => {}}>
+      <h1 className="">Select Options</h1>
+      {options.map(({ label, value, status }) => (
+        <div key={value}>
+          <label>
+>>>>>>> master
             <input
               type="checkbox"
               value={value}
               checked={selectedOptions.includes(value)}
               onChange={handleCheckboxChange}
+<<<<<<< HEAD
               className="form-checkbox"
             />
             <span>{label}</span>
@@ -149,6 +168,15 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
           </div>
         )}
       </div>
+=======
+            />
+            {label}
+          </label>
+          {status && <span>{status}</span>}
+        </div>
+      ))}
+      <button className="mt-2 transition-all duration-500 ease-in-out transform fade-in hover:bg-info hover:opacity-100 bg-opacity-20 border border-primary text-primary hover:text-white hover:border-info py-2 px-4 rounded" type="submit">Request Recovery</button>
+>>>>>>> master
     </form>
   );
 };

@@ -8,9 +8,9 @@ module.exports = {
     themes: [
       {
         scaffoldEth: {
-          primary: "#93BBFB",
+          primary: "#8075FF",
           "primary-content": "#212638",
-          secondary: "#DAE8FF",
+          secondary: "#FF9E72",
           "secondary-content": "#212638",
           accent: "#93BBFB",
           "accent-content": "#212638",
@@ -40,22 +40,22 @@ module.exports = {
       },
       {
         scaffoldEthDark: {
-          primary: "#212638",
-          "primary-content": "#F9FBFF",
-          secondary: "#323f61",
-          "secondary-content": "#F9FBFF",
-          accent: "#4969A6",
-          "accent-content": "#F9FBFF",
-          neutral: "#F9FBFF",
+          primary: "#1C1F2C",
+          "primary-content": "#F2F2F2",
+          secondary: "#2D3240",
+          "secondary-content": "#F2F2F2",
+          accent: "#425585",
+          "accent-content": "#F2F2F2",
+          neutral: "#F2F2F2",
           "neutral-content": "#385183",
           "base-100": "#385183",
           "base-200": "#2A3655",
           "base-300": "#212638",
           "base-content": "#F9FBFF",
-          info: "#385183",
-          success: "#34EEB6",
-          warning: "#FFCF72",
-          error: "#FF8863",
+          info: "#425585",
+          success: "#14ED9E",
+          warning: "#F7C134",
+          error: "#F85F65",
 
           "--rounded-btn": "9999rem",
 
@@ -80,6 +80,12 @@ module.exports = {
       },
       animation: {
         "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
+      fontSize: {
+        sm: "0.8rem",
       },
     },
   },

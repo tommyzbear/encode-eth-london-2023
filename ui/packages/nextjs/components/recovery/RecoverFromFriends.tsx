@@ -8,7 +8,11 @@ function RecoverFromFriends() {
         <ArrowPathIcon className="h-8 w-8 fill-secondary" />
         <p>Would you like to proceed recovery from friends?</p>
         <Link href="/recovery/from_key" passHref className="link">
+<<<<<<< HEAD
           <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">Recovery from friends</button>
+=======
+          <button className="btn btn-primary">Recovery from friends</button>
+>>>>>>> master
         </Link>{" "}
       </div>
     </div>
