@@ -15,6 +15,7 @@ interface CheckboxProps {
 const Checkbox = ({ onSelection }: CheckboxProps) => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [options, setOptions] = useState<Option[]>([]);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
@@ -23,6 +24,12 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
     } else {
       setSelectedOptions(selectedOptions.filter(option => option !== value));
     }
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 5000); // Hide popup after 5 seconds
   };
 
   useEffect(() => {
@@ -51,7 +58,7 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
 
       const options = [
         {
-          label: "Ariel",
+          label: "Arielo",
           value: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
         },
         {
@@ -113,23 +120,35 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
   // };
 
   return (
-    <form onSubmit={() => {}}>
-      <h1 className="">Select Options</h1>
+    <form className="flex flex-col items-center" onSubmit={handleSubmit}>
       {options.map(({ label, value, status }) => (
-        <div key={value}>
-          <label>
+        <div key={value} className="flex items-center mb-2 w-full justify-center">
+          <label className="flex items-center space-x-2">
             <input
               type="checkbox"
               value={value}
               checked={selectedOptions.includes(value)}
               onChange={handleCheckboxChange}
+              className="form-checkbox"
             />
-            {label}
+            <span>{label}</span>
           </label>
-          {status && <span>{status}</span>}
+          {status && <span className="ml-2 text-sm text-gray-500">{status}</span>}
         </div>
       ))}
-      <button className="mt-2 transition-all duration-500 ease-in-out transform fade-in hover:bg-info hover:opacity-100 bg-opacity-20 border border-primary text-primary hover:text-white hover:border-info py-2 px-4 rounded" type="submit">Request Recovery</button>
+      <div className="relative">
+        <button
+          className="mt-4 transition-all duration-500 ease-in-out transform hover:bg-blue-500 hover:opacity-100 bg-opacity-20 border border-blue-500 text-blue-500 hover:text-white py-2 px-4 rounded"
+          type="submit"
+        >
+          Request Recovery
+        </button>
+        {showPopup && (
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-green-500 text-white p-4 rounded shadow-lg">
+            Recovery Requested
+          </div>
+        )}
+      </div>
     </form>
   );
 };
