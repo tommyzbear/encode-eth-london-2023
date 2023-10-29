@@ -82,7 +82,7 @@ export const Header = (props: HeaderProps) => {
 
       <details className="dropdown">
         <summary className="m-2 btn text-xl">☰</summary>
-        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40">
+        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
           <li>
             <a>Item 1</a>
           </li>
