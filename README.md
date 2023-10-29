@@ -21,17 +21,15 @@ Three.js: For rendering interactive 3D graphics within the wallet.
 React: Leveraged to build a dynamic UI that enhances user interactions.
 Next.js: Ensures efficient SEO performance and server-side rendering.
 Scaffold-ETH 2: Provides a solid foundation for Ethereum-based applications, accelerating development and deployment.
-Getting Started
+
+#Getting Started
 Clone the repository and navigate to the project directory. Install the necessary dependencies using Yarn.
 
-bash
 git clone https://github.com/your-username/avatar-wallet.git
 cd avatar-wallet
 yarn install
-To start the development server:
 
-bash
-Copy code
+#To start the development server:
 yarn dev
 Now you can access the wallet application at http://localhost:3000.
 
