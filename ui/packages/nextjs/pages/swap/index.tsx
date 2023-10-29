@@ -3,11 +3,12 @@ import { TokenSelect } from "~~/components/assets/TokenSelect";
 
 const Swap: NextPage = () => {
   return (
-    <div className="container mx-auto my-10">
-      <div className="min-h-screen bg-base-200 flex items-center">
-        <div className="card mx-auto w-full max-w-xl shadow-xl">
-          <div className="grid grid-rows-2">
-            <div className="grid md:grid-cols-2 grid-cols-1  bg-base-100 rounded-xl">
+    <div className="container mx-auto">
+      <div className="min-h-screen flex items-center mx-6">
+        <div className="card mx-auto w-full max-w-xl">
+          <div className="grid grid-rows-3">
+            <img src="swap.png" alt="Your Image" className="flex justify-center mx-auto my-0 py-0" />
+            <div className="bg-white py-2 rounded-lg w-full my-0 mx-auto sm:grid sm:grid-cols-2 md:grid-cols-1">
               <div className="">
                 <TokenSelect isFrom />
               </div>
@@ -15,8 +16,8 @@ const Swap: NextPage = () => {
                 <TokenSelect />
               </div>
             </div>
-            <div className="flex items-center justify-center">
-              <button className="btn btn-accent btn-md rounded-full w-full">Swap</button>
+            <div className="flex justify-center px-4 mt-14">
+              <button className="btn btn-primary btn-md w-full text-white font-light">Swap</button>
             </div>
           </div>
         </div>
