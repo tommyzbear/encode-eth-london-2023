@@ -35,41 +35,43 @@ const Cloud: NextPage = () => {
   }, []);
 
   return (
-    <div className="flex items-center flex-col flex-grow pt-10">
+    <div className="min-h-screen flex flex-col sm:grid-2 justify-center items-center">
       <div className="px-5">
         <h1 className="text-center mb-8">
-          <span className="block text-4xl font-bold">Recovered information about your Smart Wallet</span>
+          <span className="block text-2xl font-light mt-4 mt-20">Recovered information about your Smart Wallet</span>
           <span className="block text-2xl mb-2"></span>
         </h1>
       </div>
 
-      <div className="stats shadow">
-        <div className="stat">
-          <div className="stat-title">Account</div>
-          <div className="stat-value text-primary text-xs">{account}</div>
-        </div>
-
-        <div className="stat">
-          <div className="stat-figure text-primary">
-            <Image alt="eth_logo" src="/ethereum-eth-logo.svg" height={24} width={24} />
+      <div className="rounded-xl bg-base-200 flex items-center justify-center">
+        <div className="stats shadow">
+          <div className="stat">
+            <div className="stat-title">Account</div>
+            <div className="stat-value text-primary text-xs">{account}</div>
           </div>
-          <div className="stat-title">Balance</div>
-          <div className="stat-value text-primary">{balance} ETH</div>
-        </div>
 
-        <div className="stat">
-          <div className="stat-title">Friends</div>
-          {friends?.map((f, i) => (
-            <div key={i} className="stat-value text-sm">
-              <Address address={f} />
+          <div className="stat">
+            <div className="stat-figure text-primary">
+              <Image alt="eth_logo" src="/ethereum-eth-logo.svg" height={24} width={24} />
             </div>
-          ))}
+            <div className="stat-title">Balance</div>
+            <div className="stat-value text-primary">{balance} ETH</div>
+          </div>
+
+          <div className="stat">
+            <div className="stat-title">Friends</div>
+            {friends?.map((f, i) => (
+              <div key={i} className="stat-value text-sm">
+                <Address address={f} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-        <div className="card mx-auto w-full max-w-5xl shadow-xl">
-          <div className="bg-base-100 rounded-xl">
+      <div className="flex-grow w-full mt-2 px-4 sm:px-8 py-2">
+        <div className="card mx-auto w-full max-w-5xl">
+          <div className="rounded-xl">
             <div className="">
               <RecoverFromFriends />
             </div>

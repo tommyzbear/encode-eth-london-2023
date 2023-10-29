@@ -40,7 +40,9 @@ const Nfts: NextPage = () => {
 
   return (
     <div>
-      <div className="flex justify-center text-center text-lg font-light mt-8">Hello, those are your NFTs:</div>
+      <div className="flex justify-center text-center text-2xl font-light mt-8">
+        Hello, <br /> those are your NFTs:
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-10 mx-4">
         {cardData.map(card => (
           <div key={card.id} className="card bg-base-200 shadow-xl p-4">

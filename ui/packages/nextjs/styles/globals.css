@@ -5,7 +5,6 @@
 :root,
 [data-theme] {
   background: linear-gradient(to right, #eeb7fc, #c4dffb);
-  overflow: hidden;
 }
 
 body {
@@ -25,9 +24,13 @@ p {
 }
 
 .btn {
-  @apply shadow-md;
+  color: black;
+}
+
+hover: .btn {
+  color: black;
 }
 
 .btn.btn-ghost {
-  @apply shadow-none;
+  color: black;
 }

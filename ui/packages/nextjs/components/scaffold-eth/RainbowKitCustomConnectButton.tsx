@@ -59,7 +59,7 @@ export const RainbowKitCustomConnectButton = () => {
               if (!connected) {
                 return (
                   <button
-                    className="btn btn-sm bg-primary transition-all duration-500 ease-in-out fade-in hover:bg-primary hover:opacity-100 text-white font-light hover:bg-secondary"
+                    className="btn btn-sm bg-primary transition-all duration-500 ease-in-out fade-in hover:bg-primary hover:opacity-100 !text-white font-light hover:bg-secondary"
                     onClick={openConnectModal}
                     type="button"
                   >
@@ -160,7 +160,7 @@ export const RainbowKitCustomConnectButton = () => {
                       <li>
                         <label htmlFor="qrcode-modal" className="btn-sm !rounded-xl flex gap-3 py-3">
                           <QrCodeIcon className="h-6 w-4 ml-2 sm:ml-0" />
-                          <span className="whitespace-nowrap">View QR Code</span>
+                          <span className="whitespace-nowrap hover:text-black">View QR Code</span>
                         </label>
                       </li>
                       <li>

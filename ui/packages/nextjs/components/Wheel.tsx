@@ -10,7 +10,7 @@ type WheelProps = {
   assets: Asset[];
 };
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"]; // add more colors if you have many assets
+const COLORS = ["#d591ff", "#b6fca4", "#f7ce52", "#FF8042"]; // add more colors if you have many assets
 
 const Wheel: React.FC<WheelProps> = ({ assets }) => {
   const totalUnits = assets.reduce((total, asset) => total + asset.units, 0);
@@ -22,7 +22,7 @@ const Wheel: React.FC<WheelProps> = ({ assets }) => {
   console.log(formattedData);
 
   return (
-    <PieChart width={400} height={400}>
+    <PieChart width={350} height={350}>
       <Pie
         data={formattedData}
         dataKey="value"
