@@ -4,11 +4,17 @@ const contracts = {
       chainId: "31337",
       name: "localhost",
       contracts: {
-        PersonalAccountImplementationV1: {
+        YourContract: {
           address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
           abi: [
             {
-              inputs: [],
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "_owner",
+                  type: "address",
+                },
+              ],
               stateMutability: "nonpayable",
               type: "constructor",
             },
@@ -16,55 +22,62 @@ const contracts = {
               anonymous: false,
               inputs: [
                 {
-                  indexed: false,
+                  indexed: true,
                   internalType: "address",
-                  name: "initializer",
+                  name: "greetingSetter",
                   type: "address",
                 },
+                {
+                  indexed: false,
+                  internalType: "string",
+                  name: "newGreeting",
+                  type: "string",
+                },
+                {
+                  indexed: false,
+                  internalType: "bool",
+                  name: "premium",
+                  type: "bool",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "value",
+                  type: "uint256",
+                },
               ],
-              name: "Initialized",
+              name: "GreetingChange",
               type: "event",
             },
             {
-              inputs: [
-                {
-                  internalType: "bytes32",
-                  name: "interfaceHash",
-                  type: "bytes32",
-                },
-                {
-                  internalType: "address",
-                  name: "addr",
-                  type: "address",
-                },
-              ],
-              name: "canImplementInterfaceForAddress",
+              inputs: [],
+              name: "greeting",
               outputs: [
                 {
-                  internalType: "bytes32",
+                  internalType: "string",
                   name: "",
-                  type: "bytes32",
+                  type: "string",
                 },
               ],
               stateMutability: "view",
               type: "function",
             },
             {
-              inputs: [
+              inputs: [],
+              name: "owner",
+              outputs: [
                 {
                   internalType: "address",
-                  name: "registry_",
+                  name: "",
                   type: "address",
                 },
               ],
-              name: "initialize",
-              outputs: [],
-              stateMutability: "nonpayable",
+              stateMutability: "view",
               type: "function",
             },
             {
               inputs: [],
-              name: "isInitialized",
+              name: "premium",
               outputs: [
                 {
                   internalType: "bool",
@@ -78,132 +91,24 @@ const contracts = {
             {
               inputs: [
                 {
-                  internalType: "bytes32",
-                  name: "messageHash",
-                  type: "bytes32",
-                },
-                {
-                  internalType: "bytes",
-                  name: "signature",
-                  type: "bytes",
+                  internalType: "string",
+                  name: "_newGreeting",
+                  type: "string",
                 },
               ],
-              name: "isValidSignature",
-              outputs: [
-                {
-                  internalType: "bytes4",
-                  name: "",
-                  type: "bytes4",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "bytes",
-                  name: "message",
-                  type: "bytes",
-                },
-                {
-                  internalType: "bytes",
-                  name: "signature",
-                  type: "bytes",
-                },
-              ],
-              name: "isValidSignature",
-              outputs: [
-                {
-                  internalType: "bytes4",
-                  name: "",
-                  type: "bytes4",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-                {
-                  internalType: "uint256",
-                  name: "",
-                  type: "uint256",
-                },
-                {
-                  internalType: "uint256",
-                  name: "",
-                  type: "uint256",
-                },
-                {
-                  internalType: "bytes",
-                  name: "",
-                  type: "bytes",
-                },
-              ],
-              name: "onERC1155Received",
-              outputs: [
-                {
-                  internalType: "bytes4",
-                  name: "",
-                  type: "bytes4",
-                },
-              ],
-              stateMutability: "pure",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-                {
-                  internalType: "uint256",
-                  name: "",
-                  type: "uint256",
-                },
-                {
-                  internalType: "bytes",
-                  name: "",
-                  type: "bytes",
-                },
-              ],
-              name: "onERC721Received",
-              outputs: [
-                {
-                  internalType: "bytes4",
-                  name: "",
-                  type: "bytes4",
-                },
-              ],
-              stateMutability: "pure",
+              name: "setGreeting",
+              outputs: [],
+              stateMutability: "payable",
               type: "function",
             },
             {
               inputs: [],
-              name: "registry",
+              name: "totalCounter",
               outputs: [
                 {
-                  internalType: "address",
+                  internalType: "uint256",
                   name: "",
-                  type: "address",
+                  type: "uint256",
                 },
               ],
               stateMutability: "view",
@@ -216,36 +121,28 @@ const contracts = {
                   name: "",
                   type: "address",
                 },
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
+              ],
+              name: "userGreetingCounter",
+              outputs: [
                 {
                   internalType: "uint256",
                   name: "",
                   type: "uint256",
                 },
-                {
-                  internalType: "bytes",
-                  name: "",
-                  type: "bytes",
-                },
-                {
-                  internalType: "bytes",
-                  name: "",
-                  type: "bytes",
-                },
               ],
-              name: "tokensReceived",
-              outputs: [],
-              stateMutability: "pure",
+              stateMutability: "view",
               type: "function",
+            },
+            {
+              inputs: [],
+              name: "withdraw",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              stateMutability: "payable",
+              type: "receive",
             },
           ],
         },
