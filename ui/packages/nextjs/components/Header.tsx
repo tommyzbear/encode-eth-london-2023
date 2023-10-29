@@ -49,7 +49,7 @@ export const HeaderMenuLinks = () => {
               href={href}
               passHref
               className={`${
-                isActive ? "text-white bg-secondary hover:bg-primary" : "text-white"
+                isActive ? "text-white bg-secondary hover:bg-primary" : "text-white bg-primary"
               } focus:!bg-secondary active:!text-neutral py-1.5 px-2 text-xs mx-2 w-12`}
             >
               {icon}
@@ -78,7 +78,7 @@ export const Header = (props: HeaderProps) => {
   );
 
   return (
-    <div className="sticky lg:static top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-0 sm:px-2">
+    <div className="sticky lg:static top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-0 sm:px-2 hover:text-white">
       <div className="navbar-start w-auto lg:w-1/2">
         {props.isAuth ? (
           <div className="lg:hidden dropdown" ref={burgerMenuRef}>
@@ -94,7 +94,7 @@ export const Header = (props: HeaderProps) => {
             {isDrawerOpen && (
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content rounded-box w-52"
+                className="menu menu-compact dropdown-content rounded-box w-52 hover:text-black"
                 onClick={() => {
                   setIsDrawerOpen(false);
                 }}
@@ -107,7 +107,7 @@ export const Header = (props: HeaderProps) => {
           <></>
         )}
 
-        <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
+        <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0 hover:text-black">
           {/* <div className="flex relative w-10 h-10">
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </div> */}
@@ -118,7 +118,7 @@ export const Header = (props: HeaderProps) => {
         </Link>
 
         {props.isAuth ? (
-          <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
+          <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2 hover:text-black">
             <HeaderMenuLinks />
           </ul>
         ) : (
