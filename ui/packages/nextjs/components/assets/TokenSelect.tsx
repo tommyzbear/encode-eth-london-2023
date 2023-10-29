@@ -44,7 +44,7 @@ export const TokenSelect = (props: TokenSelectProps) => {
               {srcToken}
             </label>
 
-            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 w-52 mx-20">
               {coins.map((c, i) => {
                 if (destToken === c) {
                   return;
@@ -60,26 +60,19 @@ export const TokenSelect = (props: TokenSelectProps) => {
           </div>
           <input
             type="number"
-            placeholder="You pay"
             value={srcAmount === 0 ? "" : srcAmount}
+            placeholder="You pay"
             onChange={e => setSrcAmount(Number(e.currentTarget.value))}
-            className="input input-bordered w-full max-w-xs flex my-auto"
+            className="input w-full max-w-xs flex my-auto border-none ml-8"
           />
         </div>
       ) : (
         <div className="flex flex-row">
-          <input
-            type="number"
-            placeholder="You receive"
-            value={destAmount}
-            className="input input-bordered w-full max-w-xs flex my-auto"
-          />
-
           <div className="dropdown dropdown-right flex justify-end">
             <label tabIndex={0} className="btn m-1">
               {destToken}
             </label>
-            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 w-52">
               {coins.map((c, i) => {
                 if (srcToken === c) {
                   return;
@@ -93,6 +86,12 @@ export const TokenSelect = (props: TokenSelectProps) => {
               })}
             </ul>
           </div>
+          <input
+            type="number"
+            placeholder="You receive"
+            value={destAmount === 0 ? "" : destAmount}
+            className="input w-full max-w-xs flex my-auto border-none ml-6"
+          />
         </div>
       )}
     </>
