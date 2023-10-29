@@ -9,8 +9,8 @@ interface AssetCardProps {
 
 const AssetCard: React.FC<AssetCardProps> = ({ name, units, price, value }) => {
   return (
-    <div>
-      <h3>{name}</h3>
+    <div className="w-full mb-3 mx-10 bg-base-200 border border-white shadow-lg  rounded-2xl p-4">
+      <h3 className="font-bold">{name}</h3>
       <p>Units held: {units}</p>
       <p>Price: {price}</p>
       <p>Value: {value}</p>
