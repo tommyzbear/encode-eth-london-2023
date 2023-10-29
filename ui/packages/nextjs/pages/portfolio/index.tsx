@@ -58,9 +58,9 @@ const Portfolio: React.FC = () => {
   return (
     <div>
       <Wheel assets={assetData || []} />
-      {assetData?.map((asset, index) => (
-        <AssetCard key={index} {...asset} />
-      ))}
+        {assetData?.map((asset, index) => (
+          <AssetCard key={index} {...asset} />
+        ))}
       {/* <Chart data={assetData} /> */}
     </div>
   );
