@@ -41,9 +41,9 @@ const Nfts: NextPage = () => {
   return (
     <div>
       <div className="flex text-center my-10">Hello, those are your NFTs</div>
-      <div className="grid grid-cols-3 gap-3 my-10">
+      <div className="grid grid-cols-3 gap-9 my-10">
         {cardData.map((card) => (
-          <div key={card.id} className="card w-96 bg-base-100 shadow-xl">
+          <div key={card.id} className="card w-96 bg-base-200 shadow-xl">
             <figure>
               <Image src="/nft.png" alt="NFT" width={400} height={300} />
             </figure>
@@ -51,7 +51,7 @@ const Nfts: NextPage = () => {
               <h2 className="card-title">{card.title}</h2>
               <p>{card.text}</p>
               <div className="card-actions justify-end">
-                <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">See details</button>
+                <button className="transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 bg-opacity-20 border border-primary text-primary hover:text-white py-2 px-4 rounded">See details</button>
               </div>
             </div>
           </div>

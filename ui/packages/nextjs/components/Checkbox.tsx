@@ -114,7 +114,7 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
 
   return (
     <form onSubmit={() => {}}>
-      <h2>Select Options</h2>
+      <h1 className="">Select Options</h1>
       {options.map(({ label, value, status }) => (
         <div key={value}>
           <label>
@@ -129,7 +129,7 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
           {status && <span>{status}</span>}
         </div>
       ))}
-      <button type="submit">Request Recovery</button>
+      <button className="mt-2 transition-all duration-500 ease-in-out transform fade-in hover:bg-info hover:opacity-100 bg-opacity-20 border border-primary text-primary hover:text-white hover:border-info py-2 px-4 rounded" type="submit">Request Recovery</button>
     </form>
   );
 };

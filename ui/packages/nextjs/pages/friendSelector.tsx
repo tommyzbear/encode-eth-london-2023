@@ -8,9 +8,14 @@ const FriendSelector: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Friend Selector</h1>
-      <Checkbox onSelection={handleSelection} />
+
+    <div className="min-h-screen flex items-center mx-6">
+      <div className="card mx-auto w-full max-w-xl">
+        <div className="grid">
+          <h1 className="text-2xl">Friend Selector</h1>
+          <Checkbox onSelection={handleSelection} />
+        </div>
+      </div>
     </div>
   );
 };
