@@ -15,26 +15,26 @@ const Nfts: NextPage = () => {
   const cardData = [
     {
       id: 1,
-      title: "#1234567",
+      title: "January 3, 2009: Bitcoin Genesis Block",
       text: "If a dog chews shoes whose shoes does he choose?",
     },
     // Add more cards here with unique data
     {
       id: 2,
-      title: "#1234567",
-      text: "If a dog chews shoes whose shoes does he choose?",
+      title: "Bitcoin Pizza Day ",
+      text: "She sells seashells by the seashore.",
     },
 
     {
       id: 3,
-      title: "#1234567",
-      text: "If a dog chews shoes whose shoes does he choose?",
+      title: "December 17, 2017",
+      text: "How can a clam cram in a clean cream can?",
     },
 
     {
       id: 4,
-      title: "#1234567",
-      text: "If a dog chews shoes whose shoes does he choose?",
+      title: "Black Thursday ",
+      text: "I slit the sheet, the sheet I slit, and on the slitted sheet I sit.",
     },
   ];
 
