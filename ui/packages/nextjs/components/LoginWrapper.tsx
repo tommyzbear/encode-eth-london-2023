@@ -44,11 +44,11 @@ export const LoginWrapper = ({ children }) => {
     // }
 
     if (!accountState.isConnected && !connectedAddress) {
-      router.push("/login");
+      // router.push("/login");
     } else {
       setIsAuth(true);
       if (pathname === "/login") {
-        router.push("/");
+        // router.push("/");
       }
     }
 
@@ -57,7 +57,7 @@ export const LoginWrapper = ({ children }) => {
 
   return (
     <>
-      <Header isAuth={isAuth} />
+      <Header isAuth={true} />
       <main className="relative flex flex-col flex-1">{children}</main>
       <Footer />
     </>
