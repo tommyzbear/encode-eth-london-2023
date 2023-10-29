@@ -21,7 +21,7 @@ const Wheel: React.FC<WheelProps> = ({ assets }) => {
 
   return (
     <PieChart width={400} height={400}>
-      <Pie data={formattedData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={150} fill="#8884d8" label>
+      <Pie data={formattedData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={15} fill="#8884d8" label>
         {formattedData.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
