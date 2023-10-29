@@ -51,7 +51,7 @@ const Nfts: NextPage = () => {
               <h2 className="card-title">{card.title}</h2>
               <p>{card.text}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-outline btn-info">See details</button>
+                <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">See details</button>
               </div>
             </div>
           </div>

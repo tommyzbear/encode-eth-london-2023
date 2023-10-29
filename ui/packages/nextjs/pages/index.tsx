@@ -31,17 +31,18 @@ const Home: NextPage = () => {
       <div className="buttons z-10 flex flex-col items-center" style={{ marginTop: "10px" }}>
         <div className="flex flex-row gap-6">
           <Link href="/swap" passHref>
-            <button className="btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 hover:bg-secondary text-white hover:text-white rounded-full">
+            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">
               Swap
             </button>
           </Link>{" "}
           <Link href="/portfolio" passHref>
-            <button className="btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:bg-secondary hover:text-white rounded-full mt-6">
+            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">
+
               Portfolio
             </button>
           </Link>{" "}
           <Link href="/nfts" passHref>
-            <button className="btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:bg-secondary hover:text-white rounded-full">
+            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">
               NFTs
             </button>
           </Link>{" "}
