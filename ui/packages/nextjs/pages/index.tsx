@@ -10,16 +10,16 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center">
       <MetaHeader />
-      <div className="text-2xl">Welcome back, Saida</div>
-      <div className="mt-2">
+      <div className="text-xl pt-6">Welcome back, Saida</div>
+      <div>
         <Canvas
           camera={{ position: [0, 0, 5], near: 0.01, far: 100, rotation: [0, 0, 0], fov: 50 }}
-          className="mx-auto my-4"
+          className="mx-auto my-2"
           style={{
             width: "100vw",
             height: "100vh",
-            marginTop: "-50px",
-            marginBottom: "-200px",
+            marginTop: "-70px",
+            marginBottom: "-210px",
           }}
         >
           <OrbitControls enableZoom={false} autoRotate={true} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} />
@@ -31,17 +31,17 @@ const Home: NextPage = () => {
       <div className="buttons z-10 flex flex-col items-center" style={{ marginTop: "10px" }}>
         <div className="flex flex-row gap-6">
           <Link href="/swap" passHref>
-            <button className="btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:text-white py-2 px-4 rounded-full">
+            <button className="btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 hover:bg-secondary text-white hover:text-white rounded-full">
               Swap
             </button>
           </Link>{" "}
           <Link href="/portfolio" passHref>
-            <button className="btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:text-white py-2 px-4 rounded-full mt-6">
+            <button className="btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:bg-secondary hover:text-white rounded-full mt-6">
               Portfolio
             </button>
           </Link>{" "}
           <Link href="/nfts" passHref>
-            <button className="btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:text-white py-2 px-4 rounded-full">
+            <button className="btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-primary transition-all duration-500 ease-in-out transform fade-in hover:bg-primary hover:opacity-100 text-white hover:bg-secondary hover:text-white rounded-full">
               NFTs
             </button>
           </Link>{" "}
