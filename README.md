@@ -1,5 +1,7 @@
 # encode-eth-london-2023
 
+# Demo: https://github.com/tommyzbear/encode-eth-london-2023/blob/master/8745ca68-6c2a-4053-a3c5-1e9115004ad2.mp4
+
 # Avatar Wallet
 Avatar Wallet is a robust digital wallet solution that incorporates account abstraction technology to enhance user experience and security. At its core, Avatar Wallet is designed to simplify cryptocurrency management, while also offering a unique interface through which users can create personal avatars. The avatars serve as a personalized gateway to monitor crypto holdings, store Non-Fungible Tokens (NFTs), and engage in token swaps.
 
