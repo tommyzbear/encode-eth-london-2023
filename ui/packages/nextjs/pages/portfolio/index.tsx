@@ -61,7 +61,7 @@ const Portfolio: React.FC = () => {
         {assetData?.map((asset, index) => (
           <AssetCard key={index} {...asset} />
         ))}
-      {/* <Chart data={assetData} /> */}
+        {/* <Chart data={assetData} /> */}
     </div>
   );
 };
