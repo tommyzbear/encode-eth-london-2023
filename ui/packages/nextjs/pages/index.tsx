@@ -22,7 +22,7 @@ const Home: NextPage = () => {
             marginBottom: "-210px",
           }}
         >
-          <OrbitControls enableZoom={true} autoRotate={true} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} />
+          <OrbitControls enableZoom={false} autoRotate={true} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} />
           <ambientLight intensity={1} />
           <directionalLight position={[0, 1, 1]} />
           <Model scale={[1, 1, 1]} />
