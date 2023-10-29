@@ -6,7 +6,7 @@ const ContactBook: React.FC = () => {
 
   return (
     <div>
-      <h1>Friend Selector</h1>
+      <h1 className="text-center">Contact Book</h1>
       {names.map(name => (
         <FriendCard key={name} name={name} />
       ))}
