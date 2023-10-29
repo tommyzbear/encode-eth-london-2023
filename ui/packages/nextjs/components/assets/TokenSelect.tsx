@@ -38,13 +38,13 @@ export const TokenSelect = (props: TokenSelectProps) => {
   return (
     <>
       {props.isFrom ? (
-        <div className="flex flex-row">
+        <div className="flex flex-row p-2">
           <div className="dropdown dropdown-left dropdown-end">
             <label tabIndex={0} className="btn m-1">
               {srcToken}
             </label>
 
-            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 w-52 mx-20">
+            <ul tabIndex={0} className="dropdown-content z-[1] menu pt-2 w-52 mx-20">
               {coins.map((c, i) => {
                 if (destToken === c) {
                   return;
@@ -63,11 +63,11 @@ export const TokenSelect = (props: TokenSelectProps) => {
             value={srcAmount === 0 ? "" : srcAmount}
             placeholder="You pay"
             onChange={e => setSrcAmount(Number(e.currentTarget.value))}
-            className="input w-full max-w-xs flex my-auto border-none ml-8"
+            className="input w-full max-w-xs flex my-auto border-none"
           />
         </div>
       ) : (
-        <div className="flex flex-row">
+        <div className="flex flex-row p-2">
           <div className="dropdown dropdown-right flex justify-end">
             <label tabIndex={0} className="btn m-1">
               {destToken}
@@ -90,7 +90,7 @@ export const TokenSelect = (props: TokenSelectProps) => {
             type="number"
             placeholder="You receive"
             value={destAmount === 0 ? "" : destAmount}
-            className="input w-full max-w-xs flex my-auto border-none ml-6"
+            className="input w-full max-w-xs flex my-auto border-none"
           />
         </div>
       )}
