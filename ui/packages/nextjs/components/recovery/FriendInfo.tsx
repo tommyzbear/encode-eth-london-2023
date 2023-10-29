@@ -1,4 +1,5 @@
 import { BlockieAvatar } from "../scaffold-eth";
+import { useScaffoldContractRead } from "~~/hooks/scaffold-eth";
 
 type FriendInfoProps = {
   readonly address: string;
@@ -7,6 +8,18 @@ type FriendInfoProps = {
   readonly verified: boolean;
 };
 
+
+const didFrenSign = fren=>{
+  const { data: newEoa } = useScaffoldContractRead({
+    contractName: "RecoverableAccountImplementation",
+    functionName: "didSignValidRecovery",
+    args: [fren],
+  });
+
+  console.log (newEoa);
+  return (newEoa !== "0x0000000000000000000000000000000000000000") && newEoa ;
+
+}
 function FriendInfo(props: FriendInfoProps) {
   return (
     <div className="relative w-full h-full max-w-full !pb-12 pt-8 md:!pb-4 md:!pt-4 p-3 rounded-xl overflow-hidden flex flex-col items-center justify-center border border-[rgba(255,255,255,0.05)] turborepoCardBg">
@@ -20,7 +33,7 @@ function FriendInfo(props: FriendInfoProps) {
         <p className="text-sm !w-[280px] md:!w-[340px] text-center opacity-50 dark:opacity-70">
           {props.ens ? props.ens : props.address}
         </p>
-        <p>{props.verified ? "Your friend has verified the signature" : "Unverified"}</p>
+        <p>{ didFrenSign(props.address) ? `Your friend has verified the signature` : "Still waiting for friend to sign 😰"}</p>
       </div>
     </div>
   );
