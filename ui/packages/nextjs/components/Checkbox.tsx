@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Wallet from "../abi/TemporaryWallet.json";
 import { ethers } from "ethers";
 
@@ -137,12 +138,17 @@ const Checkbox = ({ onSelection }: CheckboxProps) => {
         </div>
       ))}
       <div className="relative">
-        <button
+        <Link href="/recovery/friends" passHref className="link">
+          <button className="btn btn-primary" type="submit">
+            Request Recovery
+          </button>
+        </Link>
+        {/* <button
           className="mt-4 transition-all duration-500 ease-in-out transform hover:bg-blue-500 hover:opacity-100 bg-opacity-20 border border-blue-500 text-blue-500 hover:text-white py-2 px-4 rounded"
           type="submit"
         >
           Request Recovery
-        </button>
+        </button> */}
         {showPopup && (
           <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-green-500 text-white p-4 rounded shadow-lg">
             Recovery Requested
